@@ -17,6 +17,7 @@
 
 ### TypeScript
 TypeScript transforms Javascript language in a typed language. While transpiling all .ts files to .js files, all variables types are checked and errors are notified to the user through the IDE. Typescript configuration is loaded from ``tsconfig.json``.
+To perform ts transpiling on save, install ``ts-node-dev``.
 
 #### Types
 ##### Basic types
@@ -65,7 +66,9 @@ type ISkill {
 Since ``editedWilder`` is typed as ``Wilder``, the default value provided in the useState() must follow the Wilder type definition. Otherwise the transpiling from TypeScript to JavaScript with ``ts-node-dev`` will trigger an error in the IDE.
 
 ### Inheritance with interface
-Inherance can be used to extends interface : either with ``extends`` or ``&``
+Types and interfaces are almost the same.
+
+Inherance can be used on interface or type : either with ``extends`` or ``&``
 
 #### Extends
 ```javascript
@@ -122,6 +125,14 @@ const stringLength = (myString as string).length
 At initialization, common types are inferred and doesn't need to be defined.
 ```javascript
 const i = 3 // i is typed as a number
+```
+
+### Functions
+Functions are also typed : their arguments and their returned values
+```javascript
+multiply(value: number,times: number):number
+multiply(value: number,times?: number):number // Optionnal parameter
+multiply(value: number,times = 1):number // Inferred
 ```
 
 ### Utilisation dans un projet ❌ / ✔️
