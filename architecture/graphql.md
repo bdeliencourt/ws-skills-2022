@@ -15,7 +15,7 @@
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
 ## Type definition
 ### Without TypeGraphQL
@@ -180,7 +180,7 @@ Description :
 
 ### Utilisation en environement professionnel ✔️
 
-Description : Utilisation de GraphQL en entreprise.
+Description : At PixPay, GraphQL is highly used.
 
 ## 🌐 J'utilise des ressources
 
