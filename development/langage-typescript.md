@@ -41,7 +41,7 @@ interface Wilder {
   skills?: ISkill[];
 }
 
-?: The property is optional
+//?: The property is optional
 ```
 
 #### Type
