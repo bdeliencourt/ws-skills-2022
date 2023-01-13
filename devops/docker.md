@@ -34,7 +34,7 @@ COPY src src
 CMD npm run start
 ```
 
-Reminder: Docker uses its own cache system. When building the image, Docker will detect if any modifications were made on copied files. For each copy instruction, if copied files are untouched from the previous generated image, Docker will use its cache. If modifications were found, Docker will run every command starting from the command that leads to changes. Source folder tends to be modified a lot while development. Place ``COPY src src`` before RUN npm i`` and a package installation will occur every time the source folder files change.
+Reminder: Docker uses its own cache system. When building the image, Docker will detect if any modifications were made on copied files. For each copy instruction, if copied files are untouched from the previous generated image, Docker will use its cache. If modifications were found, Docker will run every command starting from the command that leads to changes. Source folder tends to be modified a lot while development. Place ``COPY src src`` before ``RUN npm i`` and a package installation will occur every time the source folder files change.
 
 ### Build an image
 ```bash
