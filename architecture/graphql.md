@@ -17,6 +17,7 @@
 
 ### Un exemple personnel commenté ✔️
 
+# Server side
 ## Type definition
 ### Without TypeGraphQL
 ```javascript 
@@ -166,6 +167,14 @@ const server = new ApolloServer({
   });
 ```
 
+#Client side
+
+## Call a query
+```javascript
+query GetAdminRoleSAML($groups: [String!]!) {
+    getCurrentAdminRolesFromSAML(groups : $groups)
+}
+```
 ### Utilisation dans un projet ❌
 
 [lien github](...)
