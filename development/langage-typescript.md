@@ -85,7 +85,7 @@ interface ISkillWithScore extends ISkill{
 ### Overloading
 Inherance can be used to extends interface.
 
-#### & operator - for type
+#### & operator - for type and interface
 ```javascript
 type ISkill {
   id: number;
