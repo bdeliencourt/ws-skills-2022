@@ -3,6 +3,13 @@
 
 ## Definitions 📚
 
+## Encrypt VS Encode - todo
+
+## Password encrypt - todo
+Hashing 
+Salt
+Rainbow Tables
+
 ## Authentication 🔒
 Authentication confirms that the user says who he is. The user is authenticated by calling a login endpoint.
 Then the server is checking against the database if the user does exist. The server sends back a token, usually a JSON Token which includes user's datas : could be his id, a session id, his roles (not recommanded) and more...
@@ -65,3 +72,5 @@ To do so, an 'Authorization' property must be set.
 ```javascript
 Authorization: Bearer xxxxx.yyyyyy.zzzzz
 ```
+
+### Implementation - todo
