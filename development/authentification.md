@@ -22,16 +22,20 @@ To make the decryption harder and to avoid people having the same hashed passwor
 ## Authentication 🔒
 Authentication confirms that the user says who he is. 
 
-The user is authenticated by calling a login endpoint. The server is checking against the database if the user does exist. Then it usually sends back a token to the client a JSON Token which includes user's datas : his id, a session id, his roles (not recommanded) and more...
+The user is authenticated by calling a login endpoint. The server is checking against the database if the user does exist. 
+
+Then it usually sends back a token to the client a JSON Token which includes user's datas : his id, a session id, his roles and more...
 
 
 ## Authorization 🗃️
 Authorization allows the user to access restricted ressources, endpoints, functions. 
 Authorizations are often related to the user's roles : admin, super-admin, moderator, etc.
 
-### Where to store roles
-User's roles could be stored directly into the JWT payload but it must be wisely thought. Informations stored in the JWT can be outdated.
-An user who has his roles revoked could still access restricted endpoints because his JWT is not synchronized with the database.
+### Where to store roles ?
+User's roles could be stored directly into the JWT payload but it must be wisely thought. 
+
+Informations stored in the JWT can be outdated. An user who has his roles revoked could still access restricted endpoints because his JWT is not synchronized with the database.
+
 A good practice is to store the user's id in the token and then retreive the user's roles from the database right after receiving the request.
 
 ## JWT : JSON Web Token
@@ -73,9 +77,9 @@ SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 #### Verifying
 The JWT's content can be decoded converting it from base64 to UTF8. Its content can be altered by malicious persons. 
 
-The signature is used to check the token integrity. When creating a token, the server calls a hash function to encrypt the exact content of the header and  payload using a private secret key 🔑 that only the server knows about. After receiving a token, the server will decode it, retrieve the header and the payload and compute the signature. 
+The signature is used to check the token integrity. When creating a token, the server calls a hash function to encrypt the exact content of the header and  payload using a private secret key 🔑 that only the server knows about. 
 
-If the signature of the token matches with the computed one, then received token is valid. If not, the token was corrupted.
+After receiving a token, the server will decode it, retrieve the header and the payload and compute the signature. If the signature of the token matches with the computed one, then received token is valid. If not, the token was corrupted.
 
 ## Session Token
 A session token contains a session id that points to a session entry in the back-office database. Datas are stored in the session's database entry. Like JWT, sessions have a defined lifetime.
